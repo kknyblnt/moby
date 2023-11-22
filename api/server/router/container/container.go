@@ -65,7 +65,7 @@ func (r *containerRouter) initRoutes() {
 		router.NewPostRoute("/containers/prune", r.postContainersPrune),
 		router.NewPostRoute("/commit", r.postCommit),
 		// PUT
-		router.NewPutRoute("/containers/{name:.*}/archive", r.putContainersArchive),
+		// router.NewPutRoute("/containers/{name:.*}/archive", r.putContainersArchive),
 		// DELETE
 		router.NewDeleteRoute("/containers/{name:.*}", r.deleteContainers),
 	}
