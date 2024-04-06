@@ -43,7 +43,8 @@ func (r *containerRouter) initRoutes() {
 		router.NewGetRoute("/containers/{name:.*}/logs", r.getContainersLogs),
 		router.NewGetRoute("/containers/{name:.*}/stats", r.getContainersStats),
 		router.NewGetRoute("/containers/{name:.*}/attach/ws", r.wsContainersAttach),
-		router.NewGetRoute("/exec/{id:.*}/json", r.getExecByID),
+		//Comment this
+		//router.NewGetRoute("/exec/{id:.*}/json", r.getExecByID),
 		router.NewGetRoute("/containers/{name:.*}/archive", r.getContainersArchive),
 		// POST
 		router.NewPostRoute("/containers/create", r.postContainersCreate),
@@ -57,14 +58,16 @@ func (r *containerRouter) initRoutes() {
 		router.NewPostRoute("/containers/{name:.*}/resize", r.postContainersResize),
 		router.NewPostRoute("/containers/{name:.*}/attach", r.postContainersAttach),
 		router.NewPostRoute("/containers/{name:.*}/copy", r.postContainersCopy), // Deprecated since 1.8 (API v1.20), errors out since 1.12 (API v1.24)
-		router.NewPostRoute("/containers/{name:.*}/exec", r.postContainerExecCreate),
+		// COMMENT THIS
+		//router.NewPostRoute("/containers/{name:.*}/exec", r.postContainerExecCreate),
 		router.NewPostRoute("/exec/{name:.*}/start", r.postContainerExecStart),
 		router.NewPostRoute("/exec/{name:.*}/resize", r.postContainerExecResize),
 		router.NewPostRoute("/containers/{name:.*}/rename", r.postContainerRename),
 		router.NewPostRoute("/containers/{name:.*}/update", r.postContainerUpdate),
 		router.NewPostRoute("/containers/prune", r.postContainersPrune),
-		router.NewPostRoute("/commit", r.postCommit),
+		// router.NewPostRoute("/commit", r.postCommit),
 		// PUT
+		// COMMENT THIS
 		// router.NewPutRoute("/containers/{name:.*}/archive", r.putContainersArchive),
 		// DELETE
 		router.NewDeleteRoute("/containers/{name:.*}", r.deleteContainers),
